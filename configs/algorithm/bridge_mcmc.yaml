@@ -1,0 +1,36 @@
+defaults:
+  - _default_
+  - _self_  # this file overrides _default_
+
+name: bridge_buffer_mcmc
+script_module: bridge_buffer_mcmc
+
+loss_type: "d2e-ipf"
+
+num_sb_steps: 50
+num_fwd_steps: 2500
+num_bwd_steps: 2500
+
+num_sampling_steps: 20
+ref_process_logits_bias: 2.0
+alpha_milestones: [5, 10, 15]
+alpha_values: [0.6, 0.8, 1.0]
+alpha_start: 0.4
+
+batch_size: 256
+num_trajectories: 2
+
+fwd_lr: 1e-4
+fwd_weight_decay: 0.0001
+
+bwd_lr: 1e-3
+bwd_weight_decay: 0.0001
+
+# MCMC parameters
+off_to_on_ratio: 2
+mcmc_n_chains: ${algorithm.batch_size}  # default is batch size
+mcmc_n_steps: 1
+mcmc_burn_in: 200
+mcmc_thinning: 1
+mcmc_buffer_refresh_interval: 1
+mcmc_sample_ratio: 0.5

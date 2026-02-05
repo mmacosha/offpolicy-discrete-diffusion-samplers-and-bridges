@@ -1,0 +1,29 @@
+defaults:
+  - /target/mnist_prior@p0
+  - /target/mnist_posterior@p1
+  - /model: categorical_mlp
+  - _self_
+
+name: sb_mnist
+
+p0:
+  model: null
+  ndim: 16
+  use_true_dataset: true
+  sample_classes: [8]
+p1:
+  model: null
+  target_temperature: 0.5
+  target_class_weights: [1, 1]
+  target_class: [6, 9]
+
+# ----- Target-specific algorithm cfg ----- #
+
+all:
+  n_epochs: null
+  n_eval_samples: 2048
+  n_final_eval_samples: 16384
+
+mcmc:
+  name: hamming_ball
+  L: 5

@@ -1,0 +1,49 @@
+# Script
+script_module: # should be set by child config
+
+# Loss
+loss_type: # should be set by child config
+
+# Masking
+k_min: ${oc.select:target.all.k_min,1}  # default 1
+k_max: null
+
+# Training & Evaluation
+batch_size: 128
+eval_batch_size: 512
+n_eval_samples: ${oc.select:target.all.n_eval_samples,2048}
+n_final_eval_samples: ${oc.select:target.all.n_final_eval_samples,16384}
+
+use_ema: false
+ema_decay: 0.9999
+
+n_epochs: ${oc.select:target.all.n_epochs,20000}
+lr: 1e-3
+clip_grad: 1.0
+weight_decay: 0.0
+grad_accumulation_steps: 1
+
+# Temperature-annealed training
+invtemp_min: 0.0  # if < 1.0, invtemp will be annealed from invtemp_min to 1.0
+invtemp_anneal_ratio: 0.5
+
+# Buffer configs
+buffer_size_in_batches: 100
+buffer_prioritise_by: none
+prefill_epochs: 10
+off_to_on_ratio: 2.0
+
+# MCMC configs
+mcmc:
+  name: ${oc.select:target.mcmc.name,hamming_ball}  # default is hamming ball
+  p: ${oc.select:target.mcmc.p,0.1}  # default is 0.1
+  L: ${oc.select:target.mcmc.L,1}  # default is 1
+
+# MCMC run configs
+mcmc_n_chains: ${algorithm.batch_size}  # default is batch size
+mcmc_n_samples_per_chain: 1
+mcmc_burn_in: 99
+mcmc_thinning: 1
+mcmc_buffer_refresh_interval: 500
+mcmc_sample_ratio: 0.2
+mcmc_use_temp: false

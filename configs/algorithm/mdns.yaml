@@ -1,0 +1,27 @@
+defaults:
+  - _default_
+  - _self_  # this file overrides above
+
+name: mdns
+
+# Script
+script_module: sampler_mdns
+
+# Loss
+loss_type: wdce
+
+# Override defaults
+n_epochs: ${target.mdns.n_epochs}
+batch_size: 256
+use_ema: true
+ema_decay: 0.9999
+lr: 1e-4
+clip_grad: 0.0
+k_min: 1
+
+# MDNS Specific
+use_anneal: false  # warm-up training as used in MDNS; we don't use this but use linear annealing (see `invtemp_min` in _default_.yaml)
+anneal_beta: 0.28
+anneal_epochs: ${oc.select:target.mdns.anneal_epochs,0}  # default 0, if target.mdns.anneal_epochs is not set
+wdce_num_replicates: 8
+resample_every_n_step: 10

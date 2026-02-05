@@ -1,0 +1,15 @@
+defaults:
+  - _default_
+  - _self_  # this file overrides _default_
+
+name: logvar_temper
+
+# Script
+script_module: sampler_buffer_tempered_policy
+
+# Loss
+loss_type: logvar
+
+# Tempered Policy
+tempered_trajectory_ratio: 0.5
+policy_tempering_factor: 10.0

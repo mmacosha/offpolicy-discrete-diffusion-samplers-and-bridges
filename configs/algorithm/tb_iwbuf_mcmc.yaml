@@ -1,0 +1,16 @@
+defaults:
+  - _default_
+  - _self_  # this file overrides above
+
+name: tb_iwbuf_mcmc
+
+# Script
+script_module: sampler_buffer_mcmc
+
+# Loss
+loss_type: tb
+log_Z_lr: 1e-1
+log_Z_init: 0.0
+
+# Buffer configs
+buffer_prioritise_by: iw

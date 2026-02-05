@@ -1,0 +1,36 @@
+[project]
+name = "offpolicy-discrete-diffusion-samplers"
+version = "0.1.0"
+description = "Offpolicy training of discrete diffusion samplers"
+readme = "README.md"
+requires-python = ">=3.10,<3.14"
+license = {file = "LICENSE"}
+
+dependencies = [
+    "torch>=2.7.0",
+    "numpy>=2.1.0",
+    "scipy",
+    "matplotlib",
+    "tqdm",
+    "wandb",
+    "ipykernel",
+    "numba",
+    "timm",
+    "hydra-core>=1.3.2",
+    "plotly>=6.5.2",
+    "omegaconf>=2.3.0",
+    "setuptools",
+    "scikit-learn",
+    "jaxtyping",
+]
+
+[tool.black]
+line-length = 100
+extend-exclude = '''
+/(
+  # Exclude folders
+  | \.git
+  | \.venv
+  | MDNS
+)/
+'''

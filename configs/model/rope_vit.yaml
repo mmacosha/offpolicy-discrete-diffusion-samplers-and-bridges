@@ -1,0 +1,5 @@
+name: masked_rope_vit
+hidden_dim: 64
+n_blocks: 2
+n_heads: 4
+dtype: float32

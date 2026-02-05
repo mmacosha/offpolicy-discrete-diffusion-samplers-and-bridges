@@ -1,0 +1,17 @@
+name: mnist_prior
+ndim: 16
+use_true_dataset: true
+sample_classes: [8]
+
+defaults:
+  - /model: mlp_4layers
+  - _self_
+
+all:
+  n_epochs: 20000
+  n_eval_samples: 1024
+  n_final_eval_samples: 4096
+
+mcmc:
+  name: cat_mcmc
+  p: 0.8

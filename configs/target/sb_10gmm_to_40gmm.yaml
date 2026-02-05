@@ -1,0 +1,36 @@
+defaults:
+  - /target/3gmm_2d@p0
+  - /target/40gmm_2d@p1
+  - /model: uniform_mlp
+  - _self_
+
+name: sb_10gmm_to_40gmm
+
+p0:
+  model: null
+  spatial_dim: 2
+  variance: 10.0
+  n_centres: 10
+  centres: [[ 17.5217,  22.9946],
+            [ 15.0874,  -4.7896],
+            [ 37.0521,  15.8160],
+            [-14.9110,  34.6997],
+            [-27.4824,   9.2873],
+            [ 20.5495, -26.4142],
+            [ 23.9754,  40.2374],
+            [ 34.6338, -15.2989],
+            [ 39.6964, -13.6212],
+            [ -7.3995,  12.1424]]
+p1:
+  centres: null
+
+# ----- Target-specific algorithm cfg ----- #
+
+all:
+  n_epochs: null  # sb doesn't use n_epochs
+  n_eval_samples: 2048
+  n_final_eval_samples: 16384
+
+mcmc:
+  name: hamming_ball
+  L: 5

@@ -1,0 +1,11 @@
+defaults:
+  - _default_
+  - _self_
+
+name: ce
+
+# Script
+script_module: sampler_onpolicy
+
+# Loss and learning rates
+loss_type: ce

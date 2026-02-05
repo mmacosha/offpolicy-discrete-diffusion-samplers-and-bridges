@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+wandb/
+.vscode/
+*.egg-info/
+results/
+outputs/
+multirun/
+.secret
+.pylintrc
+.DS_Store

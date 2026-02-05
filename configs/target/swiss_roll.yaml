@@ -1,0 +1,24 @@
+name: swiss_roll
+spatial_dim: 2
+n_bits: 8
+translate: 50.0
+scale: 100.0
+n_centres: 3
+variance: 0.5
+target_seed: 0
+centres: null
+
+# ----- Select model for this target ----- #
+defaults:
+  - /model: uniform_mlp
+
+# ----- Target-specific algorithm cfg ----- #
+
+all:
+  n_epochs: 20000
+  n_eval_samples: 2048
+  n_final_eval_samples: 16384
+
+mcmc:
+  name: hamming_ball
+  L: 5

@@ -1,0 +1,28 @@
+defaults:
+  - /target/3gmm_2d@p0
+  - /target/ising_L16_critical@p1
+  - /model: uniform_mlp
+  - _self_
+
+name: sb_10gmm_to_ising_big
+
+p0:
+  model: null
+  spatial_dim: 16
+  n_bits: 16
+  variance: 10.0
+  n_centres: 10
+  centres: null
+p1:
+  model: null
+
+# ----- Target-specific algorithm cfg ----- #
+
+all:
+  n_epochs: null
+  n_eval_samples: 2048
+  n_final_eval_samples: 16384
+
+mcmc:
+  name: hamming_ball
+  L: 5

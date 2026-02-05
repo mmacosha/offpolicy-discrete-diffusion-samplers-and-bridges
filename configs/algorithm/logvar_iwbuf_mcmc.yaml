@@ -1,0 +1,14 @@
+defaults:
+  - _default_
+  - _self_  # this file overrides _default_
+
+name: logvar_iwbuf_mcmc
+
+# Script
+script_module: sampler_buffer_mcmc
+
+# Loss
+loss_type: logvar
+
+# Buffer configs
+buffer_prioritise_by: iw

@@ -1,0 +1,17 @@
+defaults:
+  - _default_
+  - _self_  # this file overrides _default_
+
+name: mh
+
+# Script
+script_module: sampler_mh
+
+mcmc:
+  name: hamming_ball
+  L: ${oc.select:target.mcmc.L,1}  # default is 1
+
+mcmc_n_chains: ${algorithm.batch_size}
+mcmc_n_samples_per_chain: null  # This should be set to (n_final_eval_samples // batch_size)
+mcmc_burn_in: 2000
+mcmc_thinning: 200

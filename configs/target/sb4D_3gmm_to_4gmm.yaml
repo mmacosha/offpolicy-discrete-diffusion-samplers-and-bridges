@@ -1,0 +1,29 @@
+defaults:
+  - /target/3gmm_2d@p0
+  - /target/3gmm_2d@p1
+  - /model: uniform_mlp
+  - _self_
+
+name: sb_3gmm_to_4gmm
+
+p0:
+  model: null
+  n_centres: 3
+  spatial_dim: 4
+  variance: 10.0
+p1:
+  model: null
+  spatial_dim: 4
+  n_centres: 4
+  variance: 10.0
+
+# ----- Target-specific algorithm cfg ----- #
+
+all:
+  n_epochs: null
+  n_eval_samples: 2048
+  n_final_eval_samples: 16384
+
+mcmc:
+  name: hamming_ball
+  L: 5

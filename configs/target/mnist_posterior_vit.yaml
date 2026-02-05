@@ -1,0 +1,18 @@
+name: mnist_posterior
+ndim: 16
+target_class: [1, 4]
+target_temperature: 1.0
+target_class_weights: null
+
+defaults:
+  - /model: masked_vit
+  - _self_
+
+all:
+  n_epochs: 20000
+  n_eval_samples: 1024
+  n_final_eval_samples: 4096
+
+mcmc:
+  name: cat_mcmc
+  p: 0.8

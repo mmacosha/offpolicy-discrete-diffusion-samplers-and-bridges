@@ -1,0 +1,13 @@
+defaults:
+  - _default_
+  - _self_  # this file overrides above
+
+name: tb
+
+# Script
+script_module: sampler_onpolicy
+
+# Loss
+loss_type: tb
+log_Z_lr: 1e-1
+log_Z_init: 0.0

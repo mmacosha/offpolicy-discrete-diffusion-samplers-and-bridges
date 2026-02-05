@@ -1,0 +1,23 @@
+name: ising
+L: 8
+beta: 0.4407
+J: 1.0
+h: 0.0
+
+# ----- Select model for this target ----- #
+defaults:
+  - /model: rope_vit
+
+# ----- Target-specific algorithm cfg ----- #
+all:
+  n_epochs: 20000
+  n_eval_samples: 2048
+  n_final_eval_samples: 16384
+
+mdns:
+  n_epochs: 50000
+  use_anneal: false  # not used by default, instead we set invtemp_min=0.0
+
+mcmc:
+  name: swendsen_wang
+  L: 1  # only used for mh

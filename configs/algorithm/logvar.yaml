@@ -1,0 +1,11 @@
+defaults:
+  - _default_
+  - _self_  # this file overrides _default_
+
+name: logvar
+
+# Script
+script_module: sampler_onpolicy
+
+# Loss
+loss_type: logvar

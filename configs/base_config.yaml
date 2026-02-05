@@ -1,0 +1,23 @@
+defaults:
+  - _self_
+  - target: ???
+  - algorithm: ???
+
+# Device and Seed
+device: "cuda"
+seed: 0
+
+# Logging
+n_logs: 20
+exp_name: null
+save_plots: false
+wandb: true
+wandb_project: "discrete-diffusion"
+wandb_tags: []  # Optional: list of tags, e.g., ["tag1", "tag2"]
+
+hydra:
+  run:
+    dir: ${get_save_dir:${target},${algorithm},${exp_name}}
+  sweep:
+    dir: ${get_save_dir:${target},${algorithm},${exp_name}}/${now:%Y-%m-%d}_${now:%H-%M-%S}
+    subdir: ${target}_${algorithm}_${exp_name}_seed=${seed}

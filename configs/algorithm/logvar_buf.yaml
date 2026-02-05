@@ -1,0 +1,14 @@
+defaults:
+  - _default_
+  - _self_  # this file overrides _default_
+
+name: logvar_buf
+
+# Script
+script_module: sampler_buffer
+
+# Loss
+loss_type: logvar
+
+# Buffer configs
+buffer_prioritise_by: none

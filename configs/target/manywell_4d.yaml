@@ -1,0 +1,24 @@
+name: manywell
+spatial_dim: 4
+rotated: true
+n_bits: 8
+translate: 4.0
+scale: 8.0
+
+# ----- Select model for this target ----- #
+defaults:
+  - /model: mlp_2layers
+
+# ----- Target-specific algorithm cfg ----- #
+all:
+  n_epochs: 20000
+  n_eval_samples: 2048
+  n_final_eval_samples: 16384
+
+mdns:
+  n_epochs: 50000
+  use_anneal: false  # not used by default, instead we set invtemp_min=0.0
+
+mcmc:
+  name: hamming_ball
+  L: 5
