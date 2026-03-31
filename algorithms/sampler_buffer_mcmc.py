@@ -108,7 +108,11 @@ def main(cfg: DictConfig):
                 ),
                 no_grad=True,
             )
-            buffer.add(x=trajectories[:, -1, :], log_density=log_density, log_iw=log_rnd)
+            buffer.add(
+                x=trajectories[:, -1, :],
+                log_density=log_density,
+                log_iw=log_rnd + (cfg.algorithm.invtemp_min - 1.0) * log_density,
+            )
             pbar.update()
 
     # Training loop

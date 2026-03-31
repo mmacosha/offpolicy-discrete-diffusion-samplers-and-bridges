@@ -1,7 +1,7 @@
 # Discrete Diffusion Samplers and Bridges: Off-Policy Algorithms and Applications in Latent Spaces
 
 <p align="center">
-      📃 <a href="https://arxiv.org/abs/TODO" target="_blank">Paper</a>  <br>
+      📃 <a href="https://arxiv.org/abs/2602.05961" target="_blank">Paper</a>  <br>
 </p>
 
 <p align="center">
@@ -99,8 +99,8 @@ Please, cite this work as:
 @article{carter2025discrete,
   title  = {Discrete Diffusion Samplers and Bridges: Off-Policy Algorithms and Applications in Latent Spaces},
   author = {Carter, Arran and Choi, Sanghyeok and Tamogashev, Kirill and Elvira, Víctor and Malkin, Nikolay},
-  year   = {2025},
-  note   = {arXiv preprint arXiv:TODO},
+  year   = {2026},
+  note   = {arXiv:2602.05961},
 }
 ```
 
