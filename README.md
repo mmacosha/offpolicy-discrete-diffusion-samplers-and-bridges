@@ -98,7 +98,7 @@ Please, cite this work as:
 ```bibtex
 @article{carter2025discrete,
   title  = {Discrete Diffusion Samplers and Bridges: Off-Policy Algorithms and Applications in Latent Spaces},
-  author = {Carter, Arran and Choi, Sanghyeok and Tamogashev, Kirill and Elvira, Víctor and Malkin, Nikolay},
+  author = {Carter, Arran and Choi, Sanghyeok and Tamogashev, Kirill and Elvira, Víctor and Whitammer, Esmeralda},
   year   = {2026},
   note   = {arXiv:2602.05961},
 }
