@@ -1,7 +1,7 @@
 # Discrete Diffusion Samplers and Bridges: Off-Policy Algorithms and Applications in Latent Spaces
 
 <p align="center">
-      📃 <a href="https://arxiv.org/abs/2602.05961" target="_blank">Paper</a>  <br>
+      📃 <a href="https://arxiv.org/abs/2602.05961" target="_blank">Paper (ICML 2026)</a>  <br>
 </p>
 
 <p align="center">
@@ -10,7 +10,7 @@
 
 ---
 > **Discrete Diffusion Samplers and Bridges: Off-Policy Algorithms and Applications in Latent Spaces**<br>
-> Arran Carter*, Sanghyeok Choi*, Kirill Tamogashev*, Víctor Elvira, Nikolay Malkin<br>
+> Arran Carter*, Sanghyeok Choi*, Kirill Tamogashev*, Víctor Elvira, Esmeralda S. Whitammer<br>
 \* - indicates equal contribution<br><br>
 >**Abstract:**   Sampling from a distribution $p(x) \propto e^{-\mathcal{E}(x)}$ known up to a normalising constant is an important and challenging problem in statistics. Recent years have seen the rise of a new family of amortised sampling algorithms, commonly referred to as diffusion samplers, that enable fast and efficient sampling from an unnormalised density. Such algorithms have been widely studied for continuous-space sampling tasks; however, their application to problems in discrete space remains largely unexplored. Although some progress has been made in this area, discrete diffusion samplers do not take full advantage of ideas commonly used for continuous-space sampling. In this paper, we propose to bridge this gap by introducing off-policy training techniques for discrete diffusion samplers. We show that these techniques improve the performance of discrete samplers on both established and new synthetic benchmarks. Next, we generalise discrete diffusion samplers to the task of bridging between two arbitrary distributions, introducing data-to-energy Schrödinger bridge training for the discrete domain for the first time. Lastly, we showcase the application of the proposed diffusion samplers to data-free posterior sampling in the discrete latent spaces of image generative models.
 
@@ -94,13 +94,13 @@ python run.py target=mnist_posterior_vit algorithm=logvar # ViT model
 Target classes for these experiments can be configured in `configs/target/mnist_posterior.yaml` or by setting `target.target_class='[<class1>, <class2>, ...]'`
 
 ## Citation
-Please, cite this work as:
+Please cite this work as:
 ```bibtex
 @article{carter2025discrete,
-  title  = {Discrete Diffusion Samplers and Bridges: Off-Policy Algorithms and Applications in Latent Spaces},
-  author = {Carter, Arran and Choi, Sanghyeok and Tamogashev, Kirill and Elvira, Víctor and Whitammer, Esmeralda},
-  year   = {2026},
-  note   = {arXiv:2602.05961},
+    title    = {Discrete Diffusion Samplers and Bridges: Off-Policy Algorithms and Applications in Latent Spaces},
+    author   = {Carter, Arran and Choi, Sanghyeok and Tamogashev, Kirill and Elvira, Víctor and Whitammer, Esmeralda},
+    year     = {2026},
+    journal  = {International Conference on Machine Learning (ICML)},
 }
 ```
 
